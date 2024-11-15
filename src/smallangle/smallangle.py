@@ -6,7 +6,7 @@ from numpy import pi
 
 @click.group()
 def cmd_group():
-    """Main command group for mathematical functions."""
+    """Command group for mathematical functions."""
     pass
 
 
@@ -20,7 +20,12 @@ def cmd_group():
     show_default=True,  # Shows the default value in help
 )
 def sin(number):
-    """Calculates sine of x over the interval from 0 to 2pi."""
+    """Calculates sine of x over the interval from 0 to 2pi.
+
+    Args:
+        number (int): Number of angles between 0 and 2pi
+    """    
+    
     x = np.linspace(0, 2 * pi, number)
     df = pd.DataFrame({"x": x, "sin(x)": np.sin(x)})
     print(df)
@@ -36,7 +41,11 @@ def sin(number):
     show_default=True,  # Shows the default value in help
 )
 def tan(number):
-    """Calculates tangent of x over the interval from 0 to 2pi."""
+    """Calculates tangent of x over the interval from 0 to 2pi.
+
+    Args:
+        number (int): Number of angles between 0 and 2pi
+    """    
     x = np.linspace(0, 2 * pi, number)
     df = pd.DataFrame({"x": x, "tan(x)": np.tan(x)})
     print(df)
